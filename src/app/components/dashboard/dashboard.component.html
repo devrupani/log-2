@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/dashboard">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/dashboard">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/products">products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">contact</a>
+                </li>
+            </ul>
+            <button type="button" (click)="logout()" class="btn btn-secondary">Logout</button>
+            <!-- <span class="me-4"> Welcome {{role}}</span> -->
+        </div>
+    </div>
+</nav>
+
+
+<div class="alert alert-primary w-25 mx-auto mt-5" *ngIf="isLogin" role="alert">
+    Welcome <h3>{{role}}</h3>
+</div>
+
+<app-footer></app-footer>

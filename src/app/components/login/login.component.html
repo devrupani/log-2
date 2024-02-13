@@ -1,0 +1,44 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+    <div class="card  w-25 w-xs-100 w-sm-100 w-lg-100 ">
+        <div class="card-body">
+            <h3 class="card-title text-center">Login</h3>
+            <hr>
+            <form [formGroup]="myLoginform" (ngSubmit)="onSubmit()">
+                <div class="card-text">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="text" class="form-control w-100" placeholder="example@yahoo.com"
+                            formControlName="username">
+                        <span
+                            *ngIf="!myLoginform.get('username')?.untouched && myLoginform.get('username')?.errors?.['required']">
+                            <small class="fw-light text-danger">*Email is required </small>
+                        </span>
+                        <span
+                            *ngIf="!myLoginform.get('username')?.untouched && myLoginform.get('username')?.errors?.['email']">
+                            <small class="fw-light text-danger">*Email is Not Valid </small>
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control w-100" placeholder="********"
+                            formControlName="password">
+                        <span
+                            *ngIf="myLoginform.get('password')?.touched && myLoginform.get('password')?.errors?.['required']">
+                            <small class="fw-light text-danger">*Password is required </small>
+                        </span>
+                        <span
+                            *ngIf="myLoginform.get('password')?.touched && myLoginform.get('password')?.errors?.['minlength']">
+                            <small class="fw-light text-danger">*Password must have 8 characters</small>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark btn-md w-100 mt-11"
+                    [disabled]="!myLoginform.valid">Submit</button>
+                <hr>
+                <button type="submit" (click)="registerPage()"
+                    class="btn btn-link text-black  btn-md w-100 mt-2">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- class="form-control w-100 ng-touched ng-dirty ng-valid" -->

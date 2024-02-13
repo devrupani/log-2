@@ -1,0 +1,33 @@
+.form-control{
+    border: var(--bs-border-width) solid #212529;
+}
+/* .card-title{
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+.card-text{
+    font-family: 'Times New Roman', Times, serif;
+}
+/* .btn{
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+} */
+
+
+.btn-dark-opp{
+    background-color: transparent;
+    border: 1px solid #111;
+}
+.btn-dark-opp:hover{
+    background-color: #212529;
+    color: white;
+    border: 1px solid #212529;
+}
+ input.ng-invalid.ng-touched{
+    border-left: 3px red solid;
+    
+}
+input.ng-touched.ng-dirty.ng-valid{
+    border-right: 3px green solid;
+    
+}
