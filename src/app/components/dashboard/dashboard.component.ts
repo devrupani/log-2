@@ -9,15 +9,26 @@ import { UserListService } from 'src/app/services/user-list.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
 role : string | undefined;
 isLogin : boolean =false;
+userRole: any;
+isUserLogin : string | boolean | undefined | null;
 
   constructor(private userlist : UserListService,private authservice : AuthService,private route : Router){
     this.role = authservice.isRole;
+    // localStorage.setItem("role",this.role)
+    // console.log(this.role);
+    
     this.isLogin = authservice.isLogin;
   } 
+
+
+  ngOnInit(): void {
+    this.userRole = localStorage.getItem('userRole');
+    this.isUserLogin = localStorage.getItem('isLogin')
+  }
   
   logout(){
    console.log(`effefefwe`);

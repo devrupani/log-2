@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+ 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/login/register/register.component';
+import { FavoriteComponent } from './components/products/favorite/favorite.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataComponent } from './components/contact/data/data.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +28,16 @@ import { RegisterComponent } from './components/login/register/register.componen
     ItemsComponent,
     FooterComponent,
     NotFoundComponent,
-    RegisterComponent
+    RegisterComponent,
+    FavoriteComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

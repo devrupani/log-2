@@ -17,15 +17,15 @@
                     <a class="nav-link" routerLink="/contact">contact</a>
                 </li>
             </ul>
-            <button type="button" (click)="logout()" class="btn btn-secondary">Logout</button>
+            <button type="button" (click)="logout()" class="btn btn-primary">Logout</button>
             <!-- <span class="me-4"> Welcome {{role}}</span> -->
         </div>
     </div>
 </nav>
 
 
-<div class="alert alert-primary w-25 mx-auto mt-5" *ngIf="isLogin" role="alert">
-    Welcome <h3>{{role}}</h3>
+<div class="alert alert-primary w-25 mx-auto mt-5" *ngIf="isUserLogin=='true'" role="alert">
+    Welcome <h3>{{userRole}}</h3>
 </div>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

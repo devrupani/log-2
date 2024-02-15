@@ -1,6 +1,25 @@
 <app-dashboard></app-dashboard>
-<div *ngFor="let item of products" >
-{{item.id}}
-{{item.p_name}}
-{{item.p_desc}}
-</div>
+<div class="container  mt-5" >
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered "  >
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Product Description</th>
+          <th scope="col">See Details</th>
+          <th scope="col">Product Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider" >
+        <tr *ngFor="let item of products" >
+          <td>{{item.id}}</td>
+          <td>{{item.p_name}}</td>
+          <td>@{{item.p_desc}}</td>
+          <td><button type="button" class="btn btn-sm btn-dark" (click)="seeItem(item.id)">Details</button></td>
+          <td><button type="button" class="btn btn-sm btn-danger"(click)="moveToFav(item.id)" >Like</button></td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+</div> 

@@ -8,6 +8,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ItemsComponent } from './components/products/items/items.component';
 import { RegisterComponent } from './components/login/register/register.component';
 import { AuthGuard } from './auth.guard';
+import { DataComponent } from './components/contact/data/data.component';
 
 const routes: Routes = [
   {path : '',redirectTo : 'login',pathMatch : 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path : 'dashboard',component : DashboardComponent, canActivate : [AuthGuard]},
   {path : 'products',component : ProductsComponent, canActivate : [AuthGuard]},
   {path : 'contact',component : ContactComponent, canActivate : [AuthGuard]},
+  {path : 'data/:id',component : DataComponent, canActivate : [AuthGuard]},
   {path : 'products/:item' , component :ItemsComponent, canActivate : [AuthGuard] },
   {path : '**',component : NotFoundComponent},
 ];

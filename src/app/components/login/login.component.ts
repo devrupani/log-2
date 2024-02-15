@@ -15,7 +15,12 @@ export class LoginComponent implements OnInit {
   users: User[] = []
 
   myLoginform!: FormGroup;
-  constructor(private router: Router, private userlist: UserListService,private authservice : AuthService) {
+
+  constructor(
+    private router: Router, 
+    private userlist: UserListService, 
+    private authservice: AuthService) {
+      
     this.users = this.userlist.users;
     console.log(this.users);
 
@@ -27,7 +32,6 @@ export class LoginComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(8)])
 
     })
-
   }
 
   registerPage() {
@@ -35,6 +39,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authservice.loginClick(this.myLoginform.value.username,this.myLoginform.value.password);
+    this.authservice.loginClick(this.myLoginform.value.username, this.myLoginform.value.password);
   }
 }

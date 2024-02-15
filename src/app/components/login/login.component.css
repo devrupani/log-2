@@ -31,3 +31,6 @@ input.ng-touched.ng-dirty.ng-valid{
     border-right: 3px green solid;
     
 }
+.card-body{
+    box-shadow: 1px 1px 6px black;
+}
